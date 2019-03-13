@@ -1,9 +1,15 @@
 import React from 'react'
 
 interface IProps {
-    size?: string
+    size?: string,
 }
 
-export default function Button(props: IProps) {
-    return <div className={`button ${props.size}`}>Button</div>
+const Button: React.FunctionComponent<IProps> = function(props) {
+    return (
+        <div className={`button ${props.size}`}>
+            {props.children}
+        </div>
+    )
 }
+
+export default Button
