@@ -32,11 +32,20 @@ class ClassButton extends React.Component<IProps, IState> {
             console.log(this.props.size + 1)
         }
     }
+    onClick = () => {
+        console.log('Called')
+        this.setState({
+            n: this.state.n + 1
+        })
+    }
     render() {
         return (
             <div onClick={this.props.onClick} className={`button ${this.props.size}`}>
                 {this.props.children}
-                {this.state.n}
+                <span onClick={this.onClick}>
+                    span
+                    {this.state.n}
+                </span>
             </div>
         )
     }

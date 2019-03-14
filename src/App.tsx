@@ -8,9 +8,12 @@ const fn: React.MouseEventHandler = function (event) {
     console.log('fn');
 }
 
-const classFn: React.MouseEventHandler = function (event) {
+const classFn: React.MouseEventHandler = function (event: React.MouseEvent<HTMLDivElement>) {
     console.log(event)
     console.log('classFn');
+    const div = event.currentTarget
+    console.log(div);
+    console.log(div.style.width);
 }
 
 class App extends Component {
