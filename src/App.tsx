@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import Button from './Button'
+import ClassButton from './ClassButton'
 import './App.css';
 
 const fn: React.MouseEventHandler = function (event) {
     console.log(event);
     console.log('fn');
+}
+
+const classFn: React.MouseEventHandler = function (event) {
+    console.log(event)
+    console.log('classFn');
 }
 
 class App extends Component {
@@ -17,6 +23,8 @@ class App extends Component {
                 </Button>
                 <Button>OK</Button>
                 <Button size="large">Yes</Button>
+                <ClassButton onClick={classFn} size="large">ClassButton</ClassButton>
+                <ClassButton>ClassButton</ClassButton>
             </div>
         );
     }
